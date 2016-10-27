@@ -1,0 +1,243 @@
+@charset "UTF-8";
+@import "base";
+
+@mixin container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin cover {
+  background-color: $bg-c-main;
+}
+
+body {
+  font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+}
+
+#header {
+  margin: 0;
+  position: fixed;
+  height: 118px;
+  width: 100%;
+  z-index: 9;
+  color: #f2f2f2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  li a {
+    //actived:#ffffff not actived:#defffc
+    font-size: 13px;
+    padding: 0 13px;
+    text-decoration: none;
+    color: #ffffff;
+
+    &:hover {
+      color: #defffc;
+    }
+  }
+}
+
+#header {
+  top: 0px;
+}
+
+#footer {
+  bottom: 0px;
+}
+
+.first-container {
+
+  @include container;
+  @include cover;
+  padding: 120px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .slogan-container {
+    display: flex;
+    max-height: 300px;
+    width: 100%;
+    justify-content: space-between;
+
+    .slogan {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 63px;
+      line-height: 1.1em;
+
+      .main-title {
+        color: $text-c-slogan1;
+      }
+
+      .sub-title {
+        color: $text-c-slogan2;
+        font-weight: lighter;
+      }
+
+    }
+
+    .play-video {
+      min-width: 100px;
+      min-height: 100px;
+      border: 3px solid #ffffff;
+      border-radius: 100px;
+      align-self: flex-end;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:after {
+        content: '';
+        border-left: 12px solid #ffffff;
+        border-top: 14px solid transparent;
+        border-bottom: 14px solid transparent;
+      }
+    }
+
+  }
+}
+
+//向下的小箭头
+//TODO:动画,rotate,opacity
+
+.down-arrow-ani:after {
+  content: '>';
+  display: none;
+}
+
+//**************************
+//      section TWO~
+//**************************
+
+.second-container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  padding: 120px 0;
+
+  .what-we-focus {
+    max-width: 50%;
+    text-align: center;
+    align-self: center;
+    font-size: $fz-secpage-title;;
+    line-height: 1.1em;
+  }
+
+  .solution-wrapper {
+    display: flex;
+    justify-content: center;
+    align-content: flex-end;
+
+    .meshcell, .trackcell, .other-solution {
+      //TODO:用继承重写.
+      width: 25%;
+      margin-left: 5%;
+
+      .secpage-subtitle {
+        font-size: $fz-secpage-subtitle;
+        line-height: 1.1em;
+
+      }
+      .secpage-content {
+        font-size: $fz-secpage-content;
+        color: $text-c-secpage-detail;
+        line-height: 1.65em;
+        word-break: break-all;
+      }
+    }
+    .meshcell {
+      margin-left: 0;
+    }
+  }
+}
+
+.third-container {
+  @include container;
+  background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../img/index-third-bg.jpg");
+  background-size: cover, cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .why-ceilcell {
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: space-between;
+    //align-items:flex-start;
+    width: 50%;
+
+    .third-title {
+      font-size: $fz-third-title;
+      line-height: 1.1em;
+    }
+    .third-content {
+      font-size: $fz-thrid-content;
+      color: $color-main;
+      line-height: 1.65em;
+    }
+  }
+
+}
+
+.fourth-container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .sub-title {
+    font-size: $fz-fourth-title;
+    line-height: 1.1em;
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .subscribe {
+      margin-top: 2em;
+      font-size: 15px;
+      width: 60%;
+      display: flex;
+      input[type='text'] {
+        font-size: 1em;
+        width: 71%;
+        min-width: 50px;
+        padding: 13px;
+        border: 1px solid #e1e1e1;
+        border-radius: 2px;
+      }
+      .submit {
+        cursor: pointer;
+        border-radius: 2px;
+        margin-left: 2px;
+        font-size: 0.92em;
+        display: block;
+        width: 28%;
+        color: #ffffff;
+        background-color: $color-main;
+        transition: background-color 0.4s;
+
+        &:hover {
+          background-color: #2ca8a0;
+          transition: background-color 0.4s;
+        }
+      }
+    }
+  }
+}
+
+

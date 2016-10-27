@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+//主题绿色
+$color-main:#4ecac2;
+//主背景颜色:透明一点点
+$bg-c-main:transparentize($color-main,0.4);
+
+//slogan字体颜色1:rgb(49, 94, 91)
+$text-c-slogan2:#315E5B;
+
+//slogan字体颜色2
+$text-c-slogan1:#ffffff;
+
+//第二页内容文本
+$text-c-secpage-detail:#9d9d9d;
+
+//*************************
+//*     font-size         *
+//*************************
+//首页第二页标题
+$fz-secpage-title:40px;
+$fz-secpage-subtitle:20px;
+$fz-secpage-content:15px;
+
+
+$fz-third-title:34px;
+$fz-thrid-content:15px;
+
+
+$fz-fourth-title:40px;
