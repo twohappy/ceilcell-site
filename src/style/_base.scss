@@ -5,6 +5,10 @@ $color-main:#4ecac2;
 //主背景颜色:透明一点点
 $bg-c-main:transparentize($color-main,0.4);
 
+$bg-footer:#222222;
+
+$bg-copyright:#333333;
+
 //slogan字体颜色1:rgb(49, 94, 91)
 $text-c-slogan2:#315E5B;
 
@@ -13,6 +17,11 @@ $text-c-slogan1:#ffffff;
 
 //第二页内容文本
 $text-c-secpage-detail:#9d9d9d;
+
+
+$text-c-footer-title:#555555;
+
+$text-c-footer-content:#dddddd;
 
 //*************************
 //*     font-size         *
