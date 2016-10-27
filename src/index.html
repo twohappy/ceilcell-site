@@ -130,7 +130,7 @@
     <li><a href="">联系我们</a></li>
     <li><a href="">解决方案</a></li>
     <li><a href="">核心技术</a></li>
-    <li><a href="">search</a></li>
+    <li><a href="" class="fa fa-search" id="search"></a></li>
 </ul>
 <footer>斯尔赛尔
     无线传输，万物互连
@@ -155,13 +155,21 @@
         var scrollSpeed = 1000;
         $('#fullpage').fullpage({
             anchors: ['firstPage', 'secondPage', '3rdPage'],
-            scrollingSpeed:scrollSpeed
+            scrollingSpeed:scrollSpeed,
+            onLeave: function(index, nextIndex, direction){
+                var leavingSection = $(this);
+
+                //after leaving section 2
+                if(index == 1 && direction =='down'){
+                    $('#header').animate({'height':'60px','background-color':'#4ecac2'},scrollSpeed)
+                }
+
+                else if(index == 2 && direction == 'up'){
+                    $('#header').animate({'height':'118px','background-color':'transparent'},scrollSpeed)
+                }
+            }
+            
         });
-
-        $(window).on('scroll',function () {
-            console.log('wocao');
-        })
-
         setTimeout(function () {
             var ins = $('#myBlock').data('vide').getVideoObject();
             if (ins != undefined && ins != 'undefined' && ins != null) {
@@ -179,6 +187,12 @@
 
         $('.play-video').on('click', function (e) {
             window.open('http://v.qq.com/page/e/b/t/e0308ne1cbt.html');
+        })
+
+        $('#search').on('click',function (e) {
+            e.preventDefault();
+            //弹出搜索框...
+
         })
 
     });
