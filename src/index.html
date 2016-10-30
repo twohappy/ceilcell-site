@@ -20,6 +20,7 @@
     <script type="text/javascript" src="js/bower_components/fullpage.js/jquery.fullPage.js"></script>
 
     <script src="js/bower_components/vide/dist/jquery.vide.min.js"></script>
+    <script src="js/typing-animate.js/src/js/typing-animate.js"></script>
     <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
@@ -34,7 +35,7 @@
             <div class="slogan-container">
                 <div class="slogan">
                     <div class="main-title">无线传输 万物互联</div>
-                    <div class="sub-title">TrackCell®</div>
+                    <div class="sub-title typing-ani" ></div>
                 </div>
                 <div class="play-video"></div>
 
@@ -125,7 +126,8 @@
 
             <div class="sub-title">
 
-                <div class="subscribe-title">你想知道关于我们产品和服务最新的进展吗？ 发送您的邮箱联系我们吧 ，我们会在第一时间和您取得联系</div>
+                <!--<div class="subscribe-title">你想知道关于我们产品和服务最新的进展吗？ 发送您的邮箱联系我们吧 ，我们会在第一时间和您取得联系</div>-->
+                <div class="subscribe-title">想了解更多吗？请联系我们</div>
                 <div class="subscribe">
                     <div>
                         <input type="text" placeholder="E-mail*">
@@ -224,6 +226,17 @@
             //弹出搜索框...
 
         })
+
+        var typing = new Typing("typing-ani", {
+            "typingSpeed": 42,  //打字速度，数值为时间间隔（ms）
+            "cursorSpeed": 100000, //光标闪烁速度，数值为时间间隔（ms）
+            "head": "",      //头部固定文字
+            "foot": "",       //尾部固定文字
+            "loop": true,
+            "cursorChar":''
+        });
+        typing.sleep(1000).add("TrackCell").sleep(8000).delete().add("MESHCELL NETWORK").sleep(8000).delete().execute();
+        //console.log.apply(typing,this);
 
     });
 

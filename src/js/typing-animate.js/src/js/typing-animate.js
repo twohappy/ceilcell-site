@@ -116,6 +116,9 @@
 	        $("."+This.className + " .typing-container").append("<span>"+This.stringName.charAt(count)+"</span>");
 	        count++;
 		        if (count == length) {
+					$("."+This.className + " .typing-container").append("<sup>®</sup>");
+
+		        }else if (count == length+1) {
 		        	clearInterval(charInterval);
 		        	This.execute();
 		        }
@@ -127,15 +130,15 @@
 		var show = true;
 		var allCharLength = $("."+This.className + " .typing-container")[0].children.length;
 		if(!val == true){
-			val = allCharLength;
+			val = allCharLength+1;
 		}
-		if (val > allCharLength) {
+		if (val > allCharLength+1) {
 			console.error("The delete function's param must less than String's length");
 		} else{
 		var charInterval = setInterval(function(){
-        $("."+This.className + " .typing-container span:nth-last-child(1)").remove();
+        $("."+This.className + " .typing-container *:nth-last-child(1)").remove();
         count++;
-	        if (count == val) {
+	        if (count == val+1) {
 	        	clearInterval(charInterval);
 	        	This.execute();
 	        }
